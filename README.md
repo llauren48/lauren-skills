@@ -40,6 +40,14 @@ python skills/detailed-design/scripts/export_docx.py design.xml --output design.
 | Cursor | `.cursor/skills/detailed-design/` | `~/.cursor/skills/detailed-design/` | 在 Agent 中选择对应技能，或明确要求使用 `detailed-design` |
 | GitHub Copilot（VS Code） | `.github/skills/detailed-design/` | `~/.copilot/skills/detailed-design/` | 在 Agent Chat 中明确指定技能；可用客户端入口以实际版本为准 |
 
+### 用一句提示词安装
+
+将下面这句话发给目标 Coding Agent：
+
+> 请从 https://github.com/llauren48/lauren-skills 安装 `skills/detailed-design` 技能，根据你当前的平台选择项目级技能目录，完整保留模板、参考文档和脚本；已有同名技能时先比较差异再处理，安装后检查技能能否被发现，并告诉我调用方式。
+
+请在目标项目中执行；如希望跨项目使用，将提示词中的“项目级”改为“个人级”。安装会写入技能目录，涉及额外权限时按当前 Agent 的提示处理，飞书授权仍需单独配置。
+
 ### 1. 复制完整目录
 
 先克隆本仓库，再根据目标 Agent 选择一种目录。下面以**目标项目使用 Claude Code**为例，PowerShell 命令可将目录替换为表中的其他项目级位置：
