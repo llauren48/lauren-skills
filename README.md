@@ -25,6 +25,18 @@ python skills/detailed-design/scripts/export_docx.py design.xml --output design.
 
 格式见 [Word 指引](skills/detailed-design/references/word.md)。支持中文、富文本、表格、链接和 PNG/JPEG 图片，默认拒绝覆盖已有文件。
 
+### Word 样式与已有文档重排
+
+样式固化在 [`word-style.json`](skills/detailed-design/assets/word-style.json)：A4、Arial／等线、正文 11 磅、标题 26 磅，一级至四级标题 18／16／15／14 磅、1.2 倍行距和浅灰表格边框。默认页边距为 2.54 厘米。修改该配置后，新生成文档会自动使用对应样式；Word 模板同步提供在 `assets/template.docx`。
+
+已有 Word 仅调整样式，使用独立脚本并输出新文件：
+
+```bash
+python skills/detailed-design/scripts/style_docx.py source.docx --output styled.docx
+```
+
+该脚本保留正文、表格、链接及图片，通过已有标题样式或段落大纲级别识别章节，并把首段设为文档标题；特殊封面需先检查结构。不会覆盖源文件，输出已存在时也默认拒绝覆盖。
+
 技能源码位于 `skills/`，ZIP 和 .skill 分发包位于 `packages/`。
 
 ## 适配到不同 Coding Agent

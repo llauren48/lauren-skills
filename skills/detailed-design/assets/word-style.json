@@ -1,0 +1,14 @@
+{
+  "latin_font": "Arial",
+  "east_asia_font": "等线",
+  "body_pt": 11,
+  "title_pt": 26,
+  "heading_pt": [18, 16, 15, 14, 13, 12],
+  "heading_before_pt": [19, 16, 15, 13, 12, 12],
+  "heading_after_pt": [7, 6, 6, 6, 6, 6],
+  "line_spacing": 1.2,
+  "margin_cm": 2.54,
+  "code_font": "Consolas",
+  "code_pt": 10,
+  "table_border": "DEE0E3"
+}

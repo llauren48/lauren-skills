@@ -164,6 +164,8 @@ def export(source, output, overwrite=False):
     field.set(qn('w:instr'), 'PAGE')
     footer._p.append(field)
     render(doc, root, source.parent)
+    from style_docx import apply_style
+    apply_style(doc)
     output.parent.mkdir(parents=True, exist_ok=True)
     doc.save(output)
     check = Document(output)
