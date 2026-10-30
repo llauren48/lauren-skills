@@ -2,7 +2,7 @@
 
 ## detailed-design：详细设计文档
 
-根据需求、实际代码与官方资料编写技术详细设计。内置 XML／Word 模板，支持飞书文档或本地 Word 输出，覆盖架构、代码范围、数据适配、协议兼容、验收和测试。
+根据需求、实际代码与官方资料编写技术详细设计。内置 XML／Word 模板，支持飞书文档、本地 Word 以及 GitHub Feature Request 创建、更新和详设同步，覆盖架构、代码范围、数据适配、协议兼容、验收和测试。
 
 ### 安装与使用
 
@@ -13,6 +13,15 @@
 ```
 
 未指定输出形式时会询问飞书或 Word。飞书输出需要可用且已授权的连接器或 lark-cli，Word 无需飞书。
+
+### GitHub FR 与详设同步
+
+```text
+使用 $detailed-design，基于最新详设，在指定 GitHub 仓库按 Feature request 模板提交 FR。
+使用 $detailed-design，根据评审结论同时更新我的飞书详设和已有 GitHub Issue。
+```
+
+仅处理FR时无需创建飞书或Word。技能会读取目标仓库当前模板、已有Issue和相关审核规则，整理范围、职责、风险及验收测试，提交后回读正文和标签。GitHub操作需要当前环境具备已授权连接器或 `gh`；标签、删除等权限独立核验，创建成功不代表标签已设置或审核已通过。详见 [GitHub FR 工作流](skills/detailed-design/references/github-fr.md)。不会因普通详设写作自动提交Issue或触发审核评论。
 
 ### Word 导出
 
